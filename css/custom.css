@@ -3302,6 +3302,7 @@ header.main-header {
       -50%,
       50%
     ) !important; /* Adjusts for the image dimensions to perfectly center it */
+    margin-bottom: 10px !important;
   }
   .about-us {
     padding: 50px 0 20px;
