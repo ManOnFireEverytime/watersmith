@@ -3283,10 +3283,17 @@ header.main-header {
     margin-top: 0px;
   }
   .hero-image {
-    text-align: center;
-    margin-left: 0;
+    display: flex !important; /* Align items centrally */
+    justify-content: center !important;
+    align-items: center !important;
+    /* text-align: center;
+    margin: 0 auto; */
+    margin-left: 0 !important;
   }
-
+  .hero-img {
+    height: 300px;
+    margin: 0 auto;
+  }
   .img-top {
     width: 250px !important;
     bottom: 0 !important; /* Centers vertically */
