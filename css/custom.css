@@ -3295,7 +3295,7 @@ header.main-header {
     margin: 0 auto;
   }
   .img-top {
-    width: 250px !important;
+    width: 200px !important;
     bottom: 0 !important; /* Centers vertically */
     left: 50% !important; /* Centers horizontally */
     transform: translate(
