@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- Page Title -->
+    <title>Watersmith</title>
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+    <!-- Google Fonts Css-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- SlickNav Css -->
+    <link href="css/slicknav.min.css" rel="stylesheet">
+    <!-- Swiper Css -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <!-- Font Awesome Icon Css-->
+    <link href="css/all.css" rel="stylesheet" media="screen">
+    <!-- Animated Css -->
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- Magnific Popup Core Css File -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- Main Custom Css -->
+    <link href="css/custom.css" rel="stylesheet" media="screen">
+    <style>
+        .hero-image {
+            position: relative;
+            /* Establishes a positioning context for absolutely positioned children */
+            display: inline-block;
+            /* Ensures the container fits around the images */
+        }
+
+        .hero-img {
+            display: block;
+            /* Removes extra space at the bottom of images, especially in older browsers */
+            width: 100%;
+            /* Ensure that the main image scales as needed */
+        }
+
+        .custom-file-upload {
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            border: 1px solid #5d5d5d;
+            border-radius: 6px;
+            background-color: #fff;
+            cursor: pointer;
+            width: 100%;
+            color: #000;
+            justify-content: flex-start;
+        }
+
+        .custom-file-upload i {
+            margin-right: 10px;
+            font-size: 20px;
+            color: #005b50;
+        }
+
+        .custom-file-upload span {
+            flex-grow: 0;
+            padding-left: 20px;
+        }
+
+        .custom-file-upload input[type="file"] {
+            display: none;
+        }
+
+        .custom-file-upload:hover {
+            background-color: #eee;
+            border-color: #aaa;
+        }
+
+        .white-box {
+            position: absolute;
+            bottom: 25px;
+            border-radius: 10px;
+            padding-left: 30px;
+            /* Changed from top: 50% to bottom: 30px */
+            left: 50%;
+            transform: translateX(-50%);
+            /* Removed translateY */
+            background-color: white;
+            /*padding: 20px;*/
+            width: 90%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-social-icons {
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-social-icons .social-icon {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 40px;
+            height: 40px;
+            margin-right: 1rem;
+
+        }
+
+        .hero-social-icons .social-icon i {
+
+            transition: color 0.3s ease;
+            /* Smooth transition effect */
+        }
+
+        .hero-social-icons .social-icon:hover i {
+            color: #005b50 !important;
+        }
+
+        .hero-social-icons .social-icon i {
+            font-size: 18px;
+        }
+
+        .cards h2 {
+            text-align: left;
+            padding-top: 10px;
+            font-size: medium;
+            font-weight: 800;
+            color: #005b50;
+            margin-bottom: 10px;
+        }
+
+        .list-container {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 10px;
+        }
+
+        .list-column {
+            width: 45%;
+        }
+
+        .cards li {
+            margin-bottom: 5px;
+            font-size: small;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .tax-list {
+            position: relative;
+            margin: 0;
+            padding-left: 40px;
+            /* Space for the line and icon */
+            list-style-type: none;
+        }
+
+        /* Vertical Line from the bottom of the first icon to the top of the last icon */
+        .tax-list::before {
+            content: "";
+            position: absolute;
+            left: 12px;
+            /* Aligns with the center of the icon */
+            top: 24px;
+            /* Start the line from the bottom of the first icon */
+            bottom: 40px;
+            /* End the line at the top of the last icon */
+            width: 2px;
+            background: rgba(29, 29, 29, 0.2);
+            /* Line color */
+            z-index: 0;
+        }
+
+        .tax-list .list-item {
+            display: flex;
+            align-items: flex-start;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .tax-list .check-icon {
+            position: relative;
+            z-index: 1;
+            width: 24px;
+            height: 24px;
+        }
+
+        .tax-list .text-content {
+            margin-left: 10px;
+            /* Space between icon and text */
+        }
+
+        .tax-list .text-content span {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            /* Space between title and paragraph */
+        }
+
+        .tax-list .text-content p {
+            margin: 0;
+            color: #555;
+        }
+
+
+        .cards .check-icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+        }
+
+        .two-column-list {
+            list-style-type: none;
+            /* Remove default list styling */
+            padding-left: 0;
+            /* Remove default padding */
+            margin: 0;
+            /* Remove default margin */
+            display: flex;
+            /* Enable flexbox layout */
+            flex-wrap: wrap;
+            /* Allow items to wrap to the next line */
+        }
+
+        .two-column-list li {
+            flex: 0 0 50%;
+            /* Set flex basis to 50% to create two columns */
+            display: flex;
+            /* Enable flexbox for list item content alignment */
+            align-items: center;
+            /* Align items vertically center */
+            margin-bottom: 10px;
+            /* Add some spacing between rows */
+        }
+
+        @media only screen and (max-width: 1000px) {
+            .contact-us {
+                margin-top: 20px !important;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .contact-section {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            .tax-list::before {
+                bottom: 68px;
+            }
+        }
+    </style>
+</head>
+
+<body class="tt-magic-cursor">
+
+    <!-- Preloader Start -->
+    <div class="preloader">
+        <div class="loading-container">
+            <div class="loading"></div>
+            <div id="loading-icon"><img src="images/loaderr.svg" alt=""></div>
+        </div>
+    </div>
+    <!-- Preloader End -->
+
+    <!-- Magic Cursor Start -->
+    <div id="magic-cursor">
+        <div id="ball">
+            <div class="circle"></div>
+        </div>
+    </div>
+    <!-- Magic Cursor End -->
+
+    <!-- Header Start -->
+    <header class="main-header">
+        <div class="header-sticky">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <!-- Logo Start -->
+                    <a class="navbar-brand" href="index.html">
+                        <img src="images/logo.png" alt="Logo">
+                    </a>
+                    <!-- Logo End -->
+
+                    <!-- Main Menu Start -->
+                    <div class="collapse navbar-collapse main-menu">
+                        <div class="nav-menu-wrapper">
+                            <ul class="navbar-nav mr-auto text-center" id="menu">
+                                <!-- <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li> -->
+                                <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+                                <li class="nav-item"><a class="nav-link" href="file-now.html">File Now</a></li>
+                                <li class="nav-item"><a class="nav-link" href="tax.html">Tax</a></li>
+                                <li class="nav-item"><a class="nav-link" href="accounting.html">Accounting</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="consulting.html">Consulting</a></li>
+                                <li class="nav-item"><a class="nav-link active" href="contact.html">Contact Us</a></li>
+                                <li class="nav-item highlighted-menu">
+                                    <div class="section-btn text-center">
+                                        <a href="#" class="btn-default btn-highlighted">Sign In</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Let’s Start Button Start -->
+                        <div class="header-btn d-inline-flex">
+                            <a href="#" class="btn-default">Sign In</a>
+                        </div>
+                        <!-- Let’s Start Button End -->
+                    </div>
+                    <!-- Main Menu End -->
+
+                    <div class="navbar-toggle"></div>
+                </div>
+            </nav>
+            <div class="responsive-menu"></div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Page Header Start -->
+    <!-- Hero Section Start -->
+    <div class="hero light-bg-section" style="background-image: url(./images/ccc.png);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <!-- Hero Left Content Start -->
+                    <div class="hero-content">
+                        <div class="section-title">
+                            <h1 class="text-anime-style-3" style="color: #fff;">Contact Us
+                            </h1>
+                        </div>
+                        <div class="hero-content-body wow fadeInUp" data-wow-delay="0.5s" style="color: #fff;">
+                            <p>Looking for a trusted financial partner? You've found us. At Your Watersmith, we’re here
+                                to support your business with expert accounting services</p>
+                        </div>
+
+                    </div>
+                    <!-- Hero Left Content End -->
+
+                    <div class="hero-social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin" style="color: #fff;"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram" style="color: #fff;"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-x-twitter" style="color: #fff;"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook" style="color: #fff;"></i></a>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Us Section Start -->
+    <div class="light-bg-section">
+        <!-- <div class="container">
+           
+        </div> -->
+        <div class="contact-section row" style="margin-right: 20px; margin-left: 20px;">
+            <div class="col-lg-5">
+                <div class="employee-content">
+                    <!-- Section Title Start -->
+                    <div class="section-title">
+                        <h2 class="text-anime-style-3">What will be the next step</h2>
+                    </div>
+                    <!-- Section Title End -->
+
+                    <!-- Employee Body Start -->
+                    <div class="employee-body wow fadeInUp" data-wow-delay="0.25s">
+                        <p>You’re a few steps away from achieving your financial goals in your company
+                        </p>
+                        <ul class="tax-list" style="list-style-type: none; padding-left: 0;">
+                            <li>
+                                <div class="list-item">
+                                    <img src="images/link-icon.png" alt="" class="check-icon">
+                                    <div class="text-content">
+                                        <span>1. We’ll prepare a proposal</span>
+                                        <p>Required scope, timeline, and price will be included if you provide us with
+                                            detailed information about your project.</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="list-item">
+                                    <img src="images/link-icon.png" alt="" class="check-icon">
+                                    <div class="text-content">
+                                        <span>2. Together we discuss it.</span>
+                                        <p>Let’s get acquainted and discuss all the possible variants and options.
+                                            Google Meet or Zoom usually works great.</p>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="list-item">
+                                    <img src="images/link-icon.png" alt="" class="check-icon">
+                                    <div class="text-content">
+                                        <span>3. Let's start Building</span>
+                                        <p>When the contract is signed, and all goals are set, we can start the first
+                                            sprint.</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Employee Body End -->
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <div class="contact-us"
+                    style="border-radius: 10px; background-color: #fff; margin-top: -300px; padding: 30px; width: 100%">
+                    <div class="container">
+                        <div class="row section-row align-items-center">
+                            <div class="col-lg-2">
+                                <!-- Section Title Start -->
+                                <img src="images/contact-icon.png" alt="">
+                                <!-- Section Title End -->
+                            </div>
+
+                            <div class="col-lg-10">
+                                <!-- Section Title Content Start -->
+                                <div class="section-title-content wow fadeInUp" data-wow-delay="0.25s">
+                                    <p>Write us a few words about your project and we’ll prepare a proposal for you
+                                        within 24 hours</p>
+                                </div>
+                                <!-- Section Title Content End -->
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <!-- Contact Form Start -->
+                                <div class="contact-form wow fadeInUp" data-wow-delay="0.25s">
+                                    <form id="contactForm" action="#" method="POST" data-toggle="validator">
+                                        <div class="row">
+                                            <div class="form-group col-md-6 mb-4">
+                                                <input type="text" name="fname" class="form-control" id="fname"
+                                                    placeholder="Your Name" required="">
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+
+                                            <div class="form-group col-md-6 mb-4">
+                                                <input type="text" name="lname" class="form-control" id="lname"
+                                                    placeholder="Your Email" required="">
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+
+                                            <div class="form-group col-md-6 mb-4">
+                                                <input type="email" name="email" class="form-control" id="email"
+                                                    placeholder="Company" required="">
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+
+                                            <div class="form-group col-md-6 mb-4">
+                                                <input type="text" name="phone" class="form-control" id="phone"
+                                                    placeholder="Project Budget" required="">
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+
+                                            <div class="section-title text-start">
+                                                <h2 class="text-anime-style-3">Optional</h2>
+                                            </div>
+                                            <div class="form-group col-md-12 mb-4">
+                                                <textarea name="msg" class="form-control" id="msg" rows="7"
+                                                    placeholder="Project Details" required=""></textarea>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+                                            <div class="form-group col-md-12 mb-4">
+                                                <label for="file" class="custom-file-upload">
+                                                    <i class="fa-solid fa-file"></i>
+                                                    <span id="file-name">Drop it like it's hot</span>
+                                                    <input type="file" name="file" id="file" required="">
+                                                </label>
+                                                <div class="help-block with-errors"></div>
+                                            </div>
+
+
+                                            <div class="col-md-12">
+                                                <button type="submit" class="btn-default">send</button>
+                                                <div id="msgSubmit" class="h3 hidden"></div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <p style="padding-top: 15px;">Contact us at <span
+                                            style="color: #005b50;">contactus@watersmith.co</span>
+                                    </p>
+                                </div>
+                                <!-- Contact Form End -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Contact Us Section End -->
+
+
+
+
+    <!-- Footer Start -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Footer Body Start -->
+                    <div class="footer-body">
+                        <div class="row">
+                            <div class="col-lg-5">
+
+                                <div class="footer-logo">
+                                    <img src="images/logo.png" alt="">
+                                </div>
+                                <p style="padding-top: 10px;">
+                                    Your trusted company for expert accounting
+                                    services. Explore and contact us today!
+                                </p>
+                            </div>
+
+                            <div class="col-lg-7 ">
+                                <div class="row">
+                                    <div class="col-md-4 col-6">
+                                        <!-- Footer Links Start -->
+                                        <div class="footer-links">
+                                            <h2>Services</h2>
+                                            <ul>
+                                                <li><a href="#">Assurance</a></li>
+                                                <li><a href="#">Consulting</a></li>
+                                                <li><a href="#">Tax & Legal</a></li>
+                                                <!-- <li><a href="#">Contact Us</a></li> -->
+                                            </ul>
+                                        </div>
+                                        <!-- Footer Links End -->
+                                    </div>
+
+                                    <div class="col-md-4 col-6">
+                                        <!-- Footer Links Start -->
+                                        <div class="footer-links">
+                                            <h2>Insights</h2>
+                                            <ul>
+                                                <li><a href="#">Global Insights</a></li>
+                                                <li><a href="#">Latest Insights</a></li>
+                                                <li><a href="#">Reports</a></li>
+                                                <!-- <li><a href="#">linkedin</a></li> -->
+                                            </ul>
+                                        </div>
+                                        <!-- Footer Links End -->
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <!-- Footer Contact Start -->
+                                        <div class="footer-contact">
+                                            <h2>Company</h2>
+                                            <ul>
+                                                <li><a href="#">Legal</a></li>
+                                                <li><a href="#">Terms of use</a></li>
+                                                <li><a href="#">Privacy Policy</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- Footer Contact End -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Footer Body End -->
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Jquery Library File -->
+    <script>
+        document.getElementById('file').addEventListener('change', function () {
+            const fileName = this.files.length > 0 ? this.files[0].name : 'Drop it like it\'s hot';
+            document.getElementById('file-name').textContent = fileName;
+        });
+    </script>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap js file -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Validator js file -->
+    <script src="js/validator.min.js"></script>
+    <!-- SlickNav js file -->
+    <script src="js/jquery.slicknav.js"></script>
+    <!-- Swiper js file -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <!-- Counter js file -->
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <!-- Magnific js file -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <!-- SmoothScroll -->
+    <script src="js/SmoothScroll.js"></script>
+    <!-- MagicCursor js file -->
+    <script src="js/gsap.min.js"></script>
+    <script src="js/magiccursor.js"></script>
+    <!-- Text Effect js file -->
+    <script src="js/SplitText.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <!-- Wow js file -->
+    <script src="js/wow.js"></script>
+    <!-- Main Custom js file -->
+    <script src="js/function.js"></script>
+</body>
+
+</html>

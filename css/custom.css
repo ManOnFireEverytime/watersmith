@@ -3,6 +3,19 @@
 /*** 	 01. Global Variables	  ***/
 
 /************************************/
+@font-face {
+  font-family: "Helvetica Now Display";
+  src: url("../fonts/HelveticaNowDisplay-Regular.woff2") format("woff2"),
+    url("../fonts/HelveticaNowDisplay-Regular.woff") format("woff"),
+    url("../fonts/HelveticaNowDisplay-Regular.ttf") format("truetype");
+}
+
+/* @font-face {
+  font-family: "Helvetica Now Display";
+  src: url("../fonts/HelveticaNowDisplay-Bold.woff2") format("woff2"),
+    url("../fonts/HelveticaNowDisplay-Bold.woff") format("woff"),
+    url("../fonts/HelveticaNowDisplay-Bold.ttf") format("truetype");
+} */
 
 :root {
   --primary-color: #0c1524;
@@ -15,7 +28,7 @@
   --white-color: #ffffff;
   --green-color: #eef6f6;
   --error-color: rgb(230, 87, 87);
-  --default-font: "Plus Jakarta Sans", sans-serif;
+  --default-font: "Helvetica Now Display", sans-serif;
 }
 
 /************************************/
@@ -31,12 +44,13 @@ body {
   padding-top: 100px;
   line-height: 1.6em;
   color: var(--text-color);
-  background-color: var(--green-color);
+  background-color: var(--white-color);
 }
 
 p {
   line-height: 1.6em;
   margin-bottom: 1.6em;
+  font-weight: 100;
 }
 
 h1,
@@ -215,7 +229,7 @@ body {
 }
 
 .btn-default.btn-highlighted {
-  margin-left: 20px;
+  /* margin-left: 20px; */
   background-color: transparent;
   border: 1px solid var(--accent-color);
   color: var(--accent-color);
@@ -335,13 +349,14 @@ body {
 }
 
 .light-bg-section {
-  position: relative;
+  /* position: relative; */
   width: 100%;
-  max-width: 1600px;
-  background: var(--green-color);
-  border-radius: 40px;
-  margin: 0 auto;
-  padding: 100px 0;
+  /* height: 100%; */
+  /* max-width: 1600px; */
+  background-color: var(--green-color);
+  /* border-radius: 40px;*/
+  margin: 0;
+  padding: 115px 0;
 }
 
 /* .light-bg-section::before {
@@ -354,9 +369,9 @@ body {
   background-image: url(../images/icon-section-bg.svg);
   background-repeat: no-repeat;
   background-position: bottom left;
-}
+}*/
 
-.light-bg-section .container {
+/* .light-bg-section .container {
   position: relative;
   z-index: 1;
 } */
@@ -416,7 +431,7 @@ body {
 /************************************/
 
 header.main-header {
-  background-color: var(--white-color);
+  /* background-color: var(--white-color); */
   position: relative;
   z-index: 100;
 }
@@ -440,6 +455,7 @@ header.main-header {
 .navbar-brand {
   padding: 0;
   margin: 0;
+  width: 150px;
 }
 
 .main-menu .nav-menu-wrapper {
@@ -447,6 +463,11 @@ header.main-header {
   text-align: center;
 }
 
+.active {
+  color: var(--accent-color) !important;
+  border-bottom: 2px solid var(--accent-color); /* Adds a line under the active element */
+  padding-bottom: 2px;
+}
 .main-menu .nav-menu-wrapper > ul {
   align-items: center;
   display: inline-flex;
@@ -459,7 +480,7 @@ header.main-header {
 
 .main-menu ul li a {
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 100;
   padding: 15px 15px !important;
   color: var(--primary-color);
   text-transform: capitalize;
@@ -919,10 +940,10 @@ header.main-header {
 }
 
 .state-image-counter-1 .counter-box {
-  background-color: var(--secondary-color);
-  width: 30%;
-  height: 212px;
-  border-radius: 40px;
+  /* background-color: var(--secondary-color); */
+  width: 45%;
+  /* height: 212px; */
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -930,7 +951,18 @@ header.main-header {
   padding: 0 10px;
   margin-left: 30px;
 }
-
+.state-image-counter-1.text-start .counter-box {
+  align-self: flex-start; /* Align to the left */
+  margin-left: 0; /* Remove additional margin */
+}
+.state-image-counter-1.text-center .counter-box {
+  align-self: center; /* Align to the left */
+  margin: 0 auto; /* Center alignment with auto margins */
+}
+.state-image-counter-1.text-end .counter-box {
+  align-self: flex-end; /* Align to the right */
+  margin-right: 0; /* Remove additional margin */
+}
 .counter-content h3 {
   font-size: 34px;
   font-weight: 700;
@@ -1064,7 +1096,17 @@ header.main-header {
   transition: all 0.4s ease-in-out;
   overflow: hidden;
 }
-
+.why-choose-item2 {
+  position: relative;
+  background-color: var(--white-color);
+  border-radius: 10px;
+  height: calc(100% - 30px);
+  border: 1px solid var(--primary-color);
+  margin-bottom: 30px;
+  padding: 10px 10px 10px 10px;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+}
 .why-choose-item::before {
   content: "";
   position: absolute;
@@ -1094,6 +1136,18 @@ header.main-header {
   z-index: 1;
 }
 
+.why-choose-item2 .icon-box {
+  background-color: var(--accent-color);
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
 .why-choose-body h3 {
   font-size: 22px;
   margin-bottom: 20px;
@@ -1102,7 +1156,14 @@ header.main-header {
   position: relative;
   z-index: 1;
 }
-
+.why-choose-body2 h3 {
+  font-size: 12px;
+  margin-bottom: 5px;
+  text-transform: capitalize;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  z-index: 1;
+}
 .why-choose-item:hover .why-choose-body h3 {
   color: var(--white-color);
 }
@@ -1129,7 +1190,7 @@ header.main-header {
 }
 
 .employee-content {
-  margin-top: 100px;
+  margin-top: 70px;
   margin-left: 30px;
 }
 
@@ -1170,7 +1231,10 @@ header.main-header {
 /***        10. Cta Box css       ***/
 
 /************************************/
-
+.cta-box {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
 .cta-box .container {
   background-color: var(--accent-color);
   padding: 0;
@@ -1519,12 +1583,12 @@ header.main-header {
 
 .main-footer {
   width: 100%;
-  max-width: 1600px;
+  /* max-width: 1600px; */
   margin: 0 auto;
   background: var(--green-color);
-  border-radius: 40px;
+  /* border-radius: 40px; */
   padding: 80px 0 0;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 }
 
 .footer-about {
@@ -2749,8 +2813,8 @@ header.main-header {
 
 .contact-form .form-control {
   background-color: var(--white-color);
-  border-radius: 20px;
-  border: none;
+  border-radius: 6px;
+  border: 1px solid #5d5d5d;
   box-shadow: none;
   padding: 15px 20px;
 }
@@ -3073,10 +3137,10 @@ header.main-header {
 /************************************/
 
 @media only screen and (max-width: 1600px) {
-  .light-bg-section {
+  /* .light-bg-section {
     width: calc(100% - 100px);
     margin: 0 50px;
-  }
+  } */
   .main-footer {
     width: calc(100% - 100px);
     margin: 0 50px 30px;
@@ -3084,10 +3148,10 @@ header.main-header {
 }
 
 @media only screen and (max-width: 1366px) {
-  .light-bg-section {
+  /* .light-bg-section {
     width: calc(100% - 30px);
     margin: 0 15px;
-  }
+  } */
   .main-footer {
     width: calc(100% - 30px);
     margin: 0 15px 30px;
@@ -3118,9 +3182,39 @@ header.main-header {
   #magic-cursor {
     display: none !important;
   }
+  .nav-link {
+    display: inline-block; /* Make the nav-links behave like inline blocks */
+    padding: 10px 20px;
+    text-align: center; /* Center text inside the link */
+  }
+
+  .nav-link.active {
+    color: var(--white-color) !important;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 200px;
+    border-radius: 5px !important;
+    margin: 0 auto; /* Center the link horizontally */
+    display: block; /* Set the active link as a block element */
+    text-align: center; /* Center the text inside the link */
+  }
+
+  .nav-item .section-btn {
+    margin-top: 60px !important;
+    margin-bottom: 60px !important;
+    width: 200px;
+    margin: 0 auto; /* Center the link horizontally */
+    display: block; /* Set the active link as a block element */
+    text-align: center;
+    border-radius: 5px !important;
+  }
+
+  .nav-item .section-btn .btn-default {
+    border-radius: 5px !important;
+  }
   .cta-box .cta-left {
-    padding-left: 0;
+    /* padding-left: 0; */
     padding-top: 50px;
+    padding: 35px;
     text-align: center;
   }
 
@@ -3145,16 +3239,16 @@ header.main-header {
   }
   .light-bg-section {
     width: 100%;
-    max-width: 100%;
+    /* max-width: 100%; */
     margin: 0;
     padding: 50px 0;
     border-radius: 0;
   }
-  .light-bg-section::before {
+  /*.light-bg-section::before {
     width: 300px;
     height: 350px;
     background-size: cover;
-  }
+  } */
   .section-row {
     margin-bottom: 40px;
   }
@@ -3192,6 +3286,7 @@ header.main-header {
     text-align: center;
     margin-left: 0;
   }
+
   .img-top {
     width: 250px !important;
     bottom: 0 !important; /* Centers vertically */
@@ -3628,8 +3723,10 @@ header.main-header {
     margin-bottom: 30px;
   }
   .cta-box .cta-left {
-    padding-left: 0;
+    /* padding-left: 0; */
     padding-top: 20px;
+    padding: 35px; /* Keep the padding consistent */
+    text-align: center;
   }
   .section-title {
     text-align: center;
@@ -3715,11 +3812,26 @@ header.main-header {
     aspect-ratio: 1 / 1;
   }
   .why-choose-content {
-    display: block;
+    position: absolute;
+    width: calc(100% - 20px); /* Adjust width to account for padding */
+    top: 0;
+    left: 10px; /* Add side padding */
+    right: 10px; /* Add side padding */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Push title to the top and counter to the bottom */
+    padding-left: 10px; /* Add side padding */
+    padding-right: 10px; /* Add side padding */
   }
+
   .why-choose-title {
-    max-width: 100%;
-    margin-bottom: 10px;
+    margin-top: 20px; /* Add spacing at the top */
+    margin-bottom: 10px; /* Adjust margin bottom for spacing */
+  }
+
+  .why-choose-counter {
+    margin-bottom: 20px; /* Add spacing at the bottom */
   }
   .why-choose-title h2 {
     font-size: 26px;

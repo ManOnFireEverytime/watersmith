@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- Page Title -->
+    <title>Watersmith</title>
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+    <!-- Google Fonts Css-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- SlickNav Css -->
+    <link href="css/slicknav.min.css" rel="stylesheet">
+    <!-- Swiper Css -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <!-- Font Awesome Icon Css-->
+    <link href="css/all.css" rel="stylesheet" media="screen">
+    <!-- Animated Css -->
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- Magnific Popup Core Css File -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- Main Custom Css -->
+    <link href="css/custom.css" rel="stylesheet" media="screen">
+    <style>
+        .hero-image {
+            position: relative;
+            /* Establishes a positioning context for absolutely positioned children */
+            display: inline-block;
+            /* Ensures the container fits around the images */
+        }
+
+        .hero-img {
+            display: block;
+            /* Removes extra space at the bottom of images, especially in older browsers */
+            width: 100%;
+            /* Ensure that the main image scales as needed */
+        }
+
+        .img-top {
+            position: absolute;
+            /* Allows positioning relative to the nearest positioned ancestor (hero-image) */
+            bottom: 0;
+            /* Aligns to the bottom of the hero-image container */
+            left: -100px;
+            /* Aligns to the left of the hero-image container */
+            width: 400px;
+            /* Adjust as needed for the desired size of img-top */
+            height: auto;
+            /* Adjust as needed for the desired size of img-top */
+        }
+
+        .white-box {
+            position: absolute;
+            bottom: 25px;
+            border-radius: 10px;
+            padding-left: 30px;
+            /* Changed from top: 50% to bottom: 30px */
+            left: 50%;
+            transform: translateX(-50%);
+            /* Removed translateY */
+            background-color: white;
+            /*padding: 20px;*/
+            width: 90%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .cards h2 {
+            text-align: left;
+            padding-top: 10px;
+            font-size: medium;
+            font-weight: 800;
+            color: #005b50;
+            margin-bottom: 10px;
+        }
+
+        .list-container {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 10px;
+        }
+
+        .list-column {
+            width: 45%;
+        }
+
+        .tax-list li {
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .con-list li {
+            color: #005b50;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-weight: 600;
+            border-bottom: 1px solid #005b50;
+        }
+
+        .con-list li p {
+            color: #5D5D5D;
+            margin-top: 5px;
+            font-weight: 100;
+            margin-bottom: 0;
+        }
+
+
+        .cards li {
+            margin-bottom: 5px;
+            font-size: small;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .check-icon {
+            width: 26px;
+            height: 26px;
+            margin-right: 5px;
+        }
+
+        .cards .check-icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+        }
+
+        .two-column-list {
+            list-style-type: none;
+            /* Remove default list styling */
+            padding-left: 0;
+            /* Remove default padding */
+            margin: 0;
+            /* Remove default margin */
+            display: flex;
+            /* Enable flexbox layout */
+            flex-wrap: wrap;
+            /* Allow items to wrap to the next line */
+        }
+
+        .two-column-list li {
+            flex: 0 0 50%;
+            /* Set flex basis to 50% to create two columns */
+            display: flex;
+            /* Enable flexbox for list item content alignment */
+            align-items: center;
+            /* Align items vertically center */
+            margin-bottom: 10px;
+            /* Add some spacing between rows */
+        }
+
+        @media only screen and (max-width: 768px) {
+            .cards .small-li {
+                font-size: 10px !important;
+                font-weight: 700;
+            }
+
+            .employee-content {
+                margin-top: 15px;
+            }
+
+            .employee-content .section-title h2 {
+                font-size: 25px !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="tt-magic-cursor">
+
+    <!-- Preloader Start -->
+    <div class="preloader">
+        <div class="loading-container">
+            <div class="loading"></div>
+            <div id="loading-icon"><img src="images/loaderr.svg" alt=""></div>
+        </div>
+    </div>
+    <!-- Preloader End -->
+
+    <!-- Magic Cursor Start -->
+    <div id="magic-cursor">
+        <div id="ball">
+            <div class="circle"></div>
+        </div>
+    </div>
+    <!-- Magic Cursor End -->
+
+    <!-- Header Start -->
+    <header class="main-header">
+        <div class="header-sticky">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <!-- Logo Start -->
+                    <a class="navbar-brand" href="index.html">
+                        <img src="images/logo.png" alt="Logo">
+                    </a>
+                    <!-- Logo End -->
+
+                    <!-- Main Menu Start -->
+                    <div class="collapse navbar-collapse main-menu">
+                        <div class="nav-menu-wrapper">
+                            <ul class="navbar-nav mr-auto text-center" id="menu">
+                                <!-- <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li> -->
+                                <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
+                                <li class="nav-item"><a class="nav-link" href="file-now.html">File Now</a></li>
+                                <li class="nav-item"><a class="nav-link" href="tax.html">Tax</a></li>
+                                <li class="nav-item"><a class="nav-link" href="accounting.html">Accounting</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link active" href="consulting.html">Consulting</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                                <li class="nav-item highlighted-menu">
+                                    <div class="section-btn text-center">
+                                        <a href="#" class="btn-default btn-highlighted">Sign In</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Let’s Start Button Start -->
+                        <div class="header-btn d-inline-flex">
+                            <a href="#" class="btn-default">Sign In</a>
+                        </div>
+                        <!-- Let’s Start Button End -->
+                    </div>
+                    <!-- Main Menu End -->
+
+                    <div class="navbar-toggle"></div>
+                </div>
+            </nav>
+            <div class="responsive-menu"></div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Hero Section Start -->
+    <div class="hero light-bg-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <!-- Hero Left Content Start -->
+                    <div class="hero-content">
+                        <!-- Google Rating Start -->
+                        <div class="google-rating wow fadeInUp">
+                            <ul>
+                                <li>Your Modern Day Consulting</li>
+                            </ul>
+                        </div>
+                        <!-- Google Rating End -->
+                        <div class="section-title">
+                            <h1 class="text-anime-style-3">We offer tailored financial services for everyone</h1>
+                        </div>
+                        <div class="hero-content-body wow fadeInUp" data-wow-delay="0.5s">
+                            <p>Our mission is to help organizations achieve lasting change, working smarter and growing
+                                faster. Based in Toronto with operations in Vancouver, we serve clients across Canada,
+                                offering personalized financial services. We provide online tax accounting, bookkeeping,
+                                payroll, and other essential business services for individuals, small businesses, and
+                                corporations. By focusing on collaboration, understanding client needs, and embracing
+                                technology, we deliver exceptional value and support our clients' financial success. Let
+                                us handle the administrative tasks, so you can focus on what matters most. Reach out to
+                                Your Modern Accountant for professional and friendly service</p>
+                        </div>
+
+                    </div>
+                    <!-- Hero Left Content End -->
+                </div>
+
+                <div class="col-lg-6">
+                    <!-- Hero Image Start -->
+                    <div class="hero-image">
+                        <figure>
+                            <!-- <img src="images/img-top.png" alt="Overlay Image" class="img-top"> -->
+                            <img src="images/hero-img-6.png" alt="Main Image" class="hero-img">
+                        </figure>
+                    </div>
+                    <!-- Hero Image End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero Section End -->
+
+    <!-- State Counter Section Start -->
+    <div class="state-counter">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <!-- Section Title Start -->
+                    <div class="section-title">
+
+                        <h2 class="text-anime-style-3">The type of consulting we offer</h2>
+                        <p style="padding-top: 10px;">We offer a range of accounting services designed to address the
+                            unique challenges of your business, ensuring that your financial operations are efficient,
+                            accurate, and aligned with your growth objectives</p>
+                    </div>
+                    <!-- Section Title End -->
+                </div>
+
+                <div class="col-lg-6">
+                    <!-- State Image Counter Start -->
+                    <div class="state-image-counter-1 text-end">
+                        <!-- Counter Box Start -->
+                        <div class="counter-box wow fadeInUp">
+                            <div class="why-choose-item why-choose-item2 wow fadeInUp" data-wow-delay="0.25s">
+                                <div class="icon-box" style="background-color: #4BF431; opacity: 20%;">
+                                    <!-- <img src="images/individual.svg" alt=""> -->
+                                </div>
+                                <div class="why-choose-body why-choose-body2 text-start">
+                                    <h3 style="font-size: x-small;">General business</h3>
+                                    <p style="font-size: x-small;">Software for managing finances in small to
+                                        medium-sized
+                                        businesses</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Counter Box End -->
+
+                        <!-- Counter Box Image Start -->
+                        <!-- <div class="counter-box counter-image wow fadeInUp" data-wow-delay="0.25s">
+                            <figure class="image-anime">
+                                <img src="images/counter-img-1.jpg" alt="">
+                            </figure>
+                        </div> -->
+                        <!-- Counter Box Image End -->
+
+                        <!-- Counter Box Start -->
+                        <div class="counter-box wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="why-choose-item why-choose-item2 wow fadeInUp" data-wow-delay="0.25s">
+                                <div class="icon-box" style="background-color: #1834B4; opacity: 20%;">
+                                    <!-- <img src="images/individual.svg" alt=""> -->
+                                </div>
+                                <div class="why-choose-body why-choose-body2 text-start">
+                                    <h3 style="font-size: x-small;">Startups</h3>
+                                    <p style="font-size: x-small;">Have a great idea, need admin help, or unsure about
+                                        the best structure</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Counter Box End -->
+                    </div>
+                    <!-- State Image Counter End -->
+
+                    <!-- State Image Counter Start -->
+                    <div class="state-image-counter-1 text-start">
+                        <!-- Counter Box Start -->
+                        <div class="counter-box wow fadeInUp">
+                            <div class="why-choose-item why-choose-item2 wow fadeInUp" data-wow-delay="0.25s">
+                                <div class="icon-box" style="background-color: #BDEC3D; opacity: 20%;">
+                                    <!-- <img src="images/individual.svg" alt=""> -->
+                                </div>
+                                <div class="why-choose-body why-choose-body2 text-start">
+                                    <h3 style="font-size: x-small;">Taxation and tax planning</h3>
+                                    <p style="font-size: x-small;">Software for managing finances in small to
+                                        medium-sized
+                                        businesses</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Counter Box End -->
+
+                        <div class="counter-box wow fadeInUp" data-wow-delay="0.5s">
+                            <div class="why-choose-item why-choose-item2 wow fadeInUp" data-wow-delay="0.25s">
+                                <div class="icon-box" style="background-color: #CA1CE1; opacity: 20%;">
+                                    <!-- <img src="images/individual.svg" alt=""> -->
+                                </div>
+                                <div class="why-choose-body why-choose-body2 text-start">
+                                    <h3 style="font-size: x-small;">Financial planning</h3>
+                                    <p style="font-size: x-small;">Software for managing finances in small to
+                                        medium-sized
+                                        businesses</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- State Image Counter End -->
+                    <!-- State Image Counter Start -->
+                    <div class="state-image-counter-1 text-center">
+                        <!-- Counter Box Start -->
+                        <div class="counter-box wow fadeInUp">
+                            <div class="why-choose-item why-choose-item2 wow fadeInUp" data-wow-delay="0.25s">
+                                <div class="icon-box" style="background-color: #E04407; opacity: 20%;">
+                                    <!-- <img src="images/individual.svg" alt=""> -->
+                                </div>
+                                <div class="why-choose-body why-choose-body2 text-start">
+                                    <h3 style="font-size: x-small;">Payroll and HR</h3>
+                                    <p style="font-size: x-small;">We help with business setup, payroll, and accounting
+                                        software, plus streamline your accounts for better cash flow</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Counter Box End -->
+                    </div>
+                    <!-- State Image Counter End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- State Counter Section End -->
+
+    <!-- Our Employee Section Start -->
+    <div class="our-employee" style="background-color: #EEF6F6fa;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-flex align-items-center">
+                    <!-- Center the image vertically -->
+                    <div class="employee-image text-center">
+                        <img src="images/file-13.png" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 text-start">
+                    <!-- Employee Content Start -->
+                    <div class="employee-content">
+                        <!-- Section Title Start -->
+                        <div class="section-title">
+                            <h2 class="text-anime-style-3">Tax Planning for Business</h2>
+                        </div>
+                        <!-- Section Title End -->
+
+                        <!-- Employee Body Start -->
+                        <div class="employee-body wow fadeInUp" data-wow-delay="0.25s">
+                            <p>Tax planning is essential for businesses, helping to maximize after-tax benefits and plan
+                                for future costs. We work with you to create a tailored, compliant plan that aligns with
+                                your business goals and tax implications. Our dedicated team member will collaborate
+                                with you throughout the engagement, allowing for adjustments as your business needs
+                                evolve.
+                            </p>
+                            <strong>What We Provide You</strong>
+                            <ul class="tax-list" style="list-style-type: none; padding-left: 0;">
+                                <li
+                                    style="background-color: rgba(0, 91, 80, 0.2); border-radius: 10px; display: flex; align-items: center; padding: 10px;">
+                                    <img src="images/tick.png" alt="" class="check-icon">Customized plan tailored to
+                                    your business
+                                </li>
+                                <li
+                                    style="background-color: rgba(39, 180, 43, 0.2); border-radius: 10px; display: flex; align-items: center; padding: 10px;">
+                                    <img src="images/tick.png" alt="" class="check-icon">Assurance your plan meets CRA
+                                    standards
+                                </li>
+                                <li
+                                    style="background-color: rgba(195, 178, 45, 0.2); border-radius: 10px; display: flex; align-items: center; padding: 10px;">
+                                    <img src="images/tick.png" alt="" class="check-icon">Comprehensive written plan
+                                    document
+                                </li>
+                                <li
+                                    style="background-color: rgba(180, 14, 44, 0.2); border-radius: 10px; display: flex; align-items: center; padding: 10px;">
+                                    <img src="images/tick.png" alt="" class="check-icon">Flexibility to update your plan
+                                    as goals change
+                                </li>
+                                <li
+                                    style="background-color: rgba(205, 198, 5, 0.2); border-radius: 10px; display: flex; align-items: center; padding: 10px;">
+                                    <img src="images/tick.png" alt="" class="check-icon">Dedicated team member
+                                    throughout the process
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Employee Body End -->
+
+                        <!-- Employee Footer Start -->
+                        <div class="" style="margin-bottom: 10px;">
+                            <a href="#" class="btn-default">Get Started</a>
+                        </div>
+                        <!-- Employee Footer End -->
+                    </div>
+                    <!-- Employee Content End -->
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- Our Employee Section End -->
+    <!-- Our Employee Section Start -->
+    <div class="our-employee">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 text-start">
+                    <!-- Employee Content Start -->
+                    <div class="employee-content">
+                        <!-- Section Title Start -->
+                        <div class="section-title">
+                            <h2 class="text-anime-style-3">Payroll Consulting</h2>
+                        </div>
+                        <!-- Section Title End -->
+
+                        <!-- Employee Body Start -->
+                        <div class="employee-body wow fadeInUp" data-wow-delay="0.25s">
+                            <p>Let us handle your payroll calculations and reports, saving you time and money.</p>
+                            <strong>We help you by?</strong>
+                            <ul class="con-list" style="list-style-type: none; padding-left: 0;">
+                                <li>Tracking of Employee Deductions
+                                    <p>Tax planning is essential for businesses, helping to maximize after-tax benefits
+                                        and plan for future costs</p>
+                                </li>
+                                <li>Producing Annual T4s and Records of Employment
+                                    <p>Tax planning is essential for businesses, helping to maximize after-tax benefits
+                                        and plan for future costs</p>
+                                </li>
+                                <li>Managing Employee Information plan
+                                    <p>Tax planning is essential for businesses, helping to maximize after-tax benefits
+                                        and plan for future costs</p>
+                                </li>
+                                <li>Various Report Generation
+                                    <p>Tax planning is essential for businesses, helping to maximize after-tax benefits
+                                        and plan for future costs</p>
+                                </li>
+                                <li>Customized Service to fit Your Needs
+                                    <p>Tax planning is essential for businesses, helping to maximize after-tax benefits
+                                        and plan for future costs</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Employee Body End -->
+
+                        <!-- Employee Footer Start -->
+                        <div class="" style="margin-bottom: 10px;">
+                            <a href="#" class="btn-default">Get Started</a>
+                        </div>
+                        <!-- Employee Footer End -->
+                    </div>
+                    <!-- Employee Content End -->
+                </div>
+
+                <div class="col-lg-6 d-flex align-items-center justify-content-end">
+                    <!-- Center the image vertically and align to the right -->
+                    <div class="employee-image">
+                        <img src="images/file-12.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- Our Employee Section End -->
+
+    <!-- Cta Box Section Start -->
+    <div class="cta-box">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 cta-left">
+                    <!-- Section Title Start -->
+                    <div class="section-title">
+                        <h2 class="text-anime-style-3">Looking for a great accounting for your business?</h2>
+
+                    </div>
+                    <p>
+                        You make things simple and stress-free! Through the use of cloud-based technology, we offer
+                        scalable solutions through add-ons and applications, custom-tailored to meet your specific
+                        needs.
+                    </p>
+                    <div class="section-btn wow fadeInUp" data-wow-delay="0.25s">
+                        <a href="#" class="btn-default btn-highlighted">get started now</a>
+                    </div>
+                    <!-- Section Title End -->
+                </div>
+
+                <div class="col-lg-6">
+
+                    <div class="employee-image">
+                        <img src="images/employee-img.png" alt="">
+                    </div>
+                    <!-- Section Btn Start -->
+                    <!-- <div class="section-btn wow fadeInUp" data-wow-delay="0.25s">
+                        <a href="#" class="btn-default btn-highlighted btn-large">get started</a>
+                    </div> -->
+                    <!-- Section Btn End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cta Box Section End -->
+
+
+    <!-- Footer Start -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Footer Body Start -->
+                    <div class="footer-body">
+                        <div class="row">
+                            <div class="col-lg-5">
+
+                                <div class="footer-logo">
+                                    <img src="images/logo.png" alt="">
+                                </div>
+                                <p style="padding-top: 10px;">
+                                    Your trusted company for expert accounting
+                                    services. Explore and contact us today!
+                                </p>
+                            </div>
+
+                            <div class="col-lg-7 ">
+                                <div class="row">
+                                    <div class="col-md-4 col-6">
+                                        <!-- Footer Links Start -->
+                                        <div class="footer-links">
+                                            <h2>Services</h2>
+                                            <ul>
+                                                <li><a href="#">Assurance</a></li>
+                                                <li><a href="#">Consulting</a></li>
+                                                <li><a href="#">Tax & Legal</a></li>
+                                                <!-- <li><a href="#">Contact Us</a></li> -->
+                                            </ul>
+                                        </div>
+                                        <!-- Footer Links End -->
+                                    </div>
+
+                                    <div class="col-md-4 col-6">
+                                        <!-- Footer Links Start -->
+                                        <div class="footer-links">
+                                            <h2>Insights</h2>
+                                            <ul>
+                                                <li><a href="#">Global Insights</a></li>
+                                                <li><a href="#">Latest Insights</a></li>
+                                                <li><a href="#">Reports</a></li>
+                                                <!-- <li><a href="#">linkedin</a></li> -->
+                                            </ul>
+                                        </div>
+                                        <!-- Footer Links End -->
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <!-- Footer Contact Start -->
+                                        <div class="footer-contact">
+                                            <h2>Company</h2>
+                                            <ul>
+                                                <li><a href="#">Legal</a></li>
+                                                <li><a href="#">Terms of use</a></li>
+                                                <li><a href="#">Privacy Policy</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- Footer Contact End -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Footer Body End -->
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <!-- Jquery Library File -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap js file -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Validator js file -->
+    <script src="js/validator.min.js"></script>
+    <!-- SlickNav js file -->
+    <script src="js/jquery.slicknav.js"></script>
+    <!-- Swiper js file -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <!-- Counter js file -->
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <!-- Magnific js file -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <!-- SmoothScroll -->
+    <script src="js/SmoothScroll.js"></script>
+    <!-- MagicCursor js file -->
+    <script src="js/gsap.min.js"></script>
+    <script src="js/magiccursor.js"></script>
+    <!-- Text Effect js file -->
+    <script src="js/SplitText.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <!-- Wow js file -->
+    <script src="js/wow.js"></script>
+    <!-- Main Custom js file -->
+    <script src="js/function.js"></script>
+</body>
+
+</html>

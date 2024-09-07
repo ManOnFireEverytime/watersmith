@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <!-- Page Title -->
+    <title>Watersmith</title>
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+    <!-- Google Fonts Css-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Css -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- SlickNav Css -->
+    <link href="css/slicknav.min.css" rel="stylesheet">
+    <!-- Swiper Css -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <!-- Font Awesome Icon Css-->
+    <link href="css/all.css" rel="stylesheet" media="screen">
+    <!-- Animated Css -->
+    <link href="css/animate.css" rel="stylesheet">
+    <!-- Magnific Popup Core Css File -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- Main Custom Css -->
+    <link href="css/custom.css" rel="stylesheet" media="screen">
+    <style>
+        .hero-image {
+            position: relative;
+            /* Establishes a positioning context for absolutely positioned children */
+            display: inline-block;
+            /* Ensures the container fits around the images */
+        }
+
+        .hero-img {
+            display: block;
+            /* Removes extra space at the bottom of images, especially in older browsers */
+            width: 100%;
+            /* Ensure that the main image scales as needed */
+        }
+
+        .img-top {
+            position: absolute;
+            /* Allows positioning relative to the nearest positioned ancestor (hero-image) */
+            bottom: 0;
+            /* Aligns to the bottom of the hero-image container */
+            left: -100px;
+            /* Aligns to the left of the hero-image container */
+            width: 400px;
+            /* Adjust as needed for the desired size of img-top */
+            height: auto;
+            /* Adjust as needed for the desired size of img-top */
+        }
+
+        .white-box {
+            position: absolute;
+            bottom: 25px;
+            border-radius: 10px;
+            padding-left: 30px;
+            /* Changed from top: 50% to bottom: 30px */
+            left: 50%;
+            transform: translateX(-50%);
+            /* Removed translateY */
+            background-color: white;
+            /*padding: 20px;*/
+            width: 90%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .cards h2 {
+            text-align: left;
+            padding-top: 10px;
+            font-size: medium;
+            font-weight: 800;
+            color: #005b50;
+            margin-bottom: 10px;
+        }
+
+        @keyframes fallFromTop {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes riseFromBottom {
+            0% {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .why-choose-item .icon-box {
+
+            margin: 0 auto;
+        }
+
+        .why-choose-body h3 {
+
+            margin-top: 20px;
+        }
+
+        .contentLeft .row .imgWrapper.animate {
+            opacity: 1;
+            /* Ensure visibility remains after animation */
+        }
+
+        .contentLeft .row .imgWrapper,
+        .contentLeft .row .imgWrapper img {
+            padding: 0;
+            margin: 0;
+            border: none;
+            /* Ensure there is no border causing spacing */
+        }
+
+        .contentLeft .row {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+        }
+
+        .contentLeft .row .imgWrapper {
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+            border-radius: 100px;
+            cursor: pointer;
+            box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .contentLeft .row .imgWrapper img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+            user-select: none;
+            transition: 0.3s ease;
+        }
+
+        .contentLeft .row .imgWrapper:hover img {
+            transform: scale(1.5);
+        }
+
+        .contentLeft .row .imgWrapper.animate:nth-child(odd) {
+            animation: fallFromTop 1s ease-out forwards;
+        }
+
+        .contentLeft .row .imgWrapper.animate:nth-child(even) {
+            animation: riseFromBottom 1s ease-out forwards;
+        }
+
+        @media only screen and (max-width: 768px) {
+
+            .contentLeft .row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contentLeft .row .imgWrapper {
+                height: 150px;
+                border-radius: 10px;
+            }
+
+            .employee-content {
+                margin-top: 15px;
+            }
+
+            .employee-content .section-title h2 {
+                font-size: 25px !important;
+            }
+
+        }
+
+        .why-choose-item {
+            background-color: #EFFFFD;
+        }
+
+        .list-container {
+            display: flex;
+            justify-content: space-between;
+            padding-bottom: 15px;
+        }
+
+        .list-column {
+            width: 45%;
+        }
+
+        .tax-list li {
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .cards li {
+            margin-bottom: 5px;
+            font-size: small;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .check-icon {
+            width: 26px;
+            height: 26px;
+            margin-right: 5px;
+        }
+
+        .cards .check-icon {
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+        }
+
+        @media only screen and (max-width: 1024px) {
+            .contentLeft {
+                margin-bottom: 20px;
+                margin-left: 10px;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .cards .small-li {
+                font-size: 10px !important;
+                font-weight: 700;
+            }
+        }
+    </style>
+</head>
+
+<body class="tt-magic-cursor">
+
+    <!-- Preloader Start -->
+    <div class="preloader">
+        <div class="loading-container">
+            <div class="loading"></div>
+            <div id="loading-icon"><img src="images/loaderr.svg" alt=""></div>
+        </div>
+    </div>
+    <!-- Preloader End -->
+
+    <!-- Magic Cursor Start -->
+    <div id="magic-cursor">
+        <div id="ball">
+            <div class="circle"></div>
+        </div>
+    </div>
+    <!-- Magic Cursor End -->
+
+    <!-- Header Start -->
+    <header class="main-header">
+        <div class="header-sticky">
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <!-- Logo Start -->
+                    <a class="navbar-brand" href="index.html">
+                        <img src="images/logo.png" alt="Logo">
+                    </a>
+                    <!-- Logo End -->
+
+                    <!-- Main Menu Start -->
+                    <div class="collapse navbar-collapse main-menu">
+                        <div class="nav-menu-wrapper">
+                            <ul class="navbar-nav mr-auto text-center" id="menu">
+                                <!-- <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li> -->
+                                <li class="nav-item"><a class="nav-link active" href="about.html">About us</a></li>
+                                <li class="nav-item"><a class="nav-link" href="file-now.html">File Now</a></li>
+                                <li class="nav-item"><a class="nav-link" href="tax.html">Tax</a></li>
+                                <li class="nav-item"><a class="nav-link" href="accounting.html">Accounting</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" href="consulting.html">Consulting</a></li>
+                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                                <li class="nav-item highlighted-menu">
+                                    <div class="section-btn text-center">
+                                        <a href="#" class="btn-default btn-highlighted">Sign In</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Let’s Start Button Start -->
+                        <div class="header-btn d-inline-flex">
+                            <a href="#" class="btn-default">Sign In</a>
+                        </div>
+                        <!-- Let’s Start Button End -->
+                    </div>
+                    <!-- Main Menu End -->
+
+                    <div class="navbar-toggle"></div>
+                </div>
+            </nav>
+            <div class="responsive-menu"></div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Hero Section Start -->
+    <div class="hero light-bg-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="google-rating wow fadeInUp">
+                        <ul>
+                            <li>About Your Modern Day Accountant</li>
+                        </ul>
+                    </div>
+                    <!-- Hero Left Content Start -->
+                    <div class="hero-content">
+                        <div class="section-title">
+                            <h1 class="text-anime-style-3">We offer tailored financial services for everyone</h1>
+                        </div>
+                        <div class="hero-content-body wow fadeInUp" data-wow-delay="0.5s">
+                            <p>Our mission is to help organizations achieve lasting change, working smarter and growing
+                                faster. Based in Toronto with operations in Vancouver, we serve clients across Canada,
+                                offering personalized financial services. We provide online tax accounting, bookkeeping,
+                                payroll, and other essential business services for individuals, small businesses, and
+                                corporations. By focusing on collaboration, understanding client needs, and embracing
+                                technology, we deliver exceptional value and support our clients' financial success. Let
+                                us handle the administrative tasks, so you can focus on what matters most. Reach out to
+                                Your Modern Accountant for professional and friendly service</p>
+                        </div>
+                    </div>
+                    <!-- Hero Left Content End -->
+                </div>
+
+                <div class="col-lg-6">
+                    <!-- Hero Image Start -->
+                    <div class="hero-image">
+                        <figure>
+                            <!-- <img src="images/img-top.png" alt="Overlay Image" class="img-top"> -->
+                            <img src="images/hero-img-7.png" alt="Main Image" class="hero-img">
+                        </figure>
+                    </div>
+                    <!-- Hero Image End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero Section End -->
+
+
+    <!-- Our Employee Section Start -->
+    <div class="our-employee">
+        <div class="container">
+            <div class="row align-items-start">
+                <!-- Changed align-items-center to align-items-start -->
+
+                <div class="col-lg-6 text-end">
+                    <!-- Added text-end for right alignment of the image -->
+                    <div class="contentLeft">
+                        <div class="row">
+                            <div class="imgWrapper">
+                                <img src="images/tax1.png" alt="">
+                            </div>
+                            <div class="imgWrapper">
+                                <img src="images/tax2.png" alt="">
+                            </div>
+                            <div class="imgWrapper">
+                                <img src="images/tax3.png" alt="">
+                            </div>
+                            <!-- <div class="imgWrapper">
+                                <img src="images/tax1.png" alt="">
+                            </div> -->
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 text-start">
+                    <!-- Added text-start for left alignment of text -->
+                    <!-- Employee Content Start -->
+                    <div class="employee-content">
+                        <!-- Section Title Start -->
+                        <div class="section-title">
+                            <h2 class="text-anime-style-3">Pioneering Trust in Accounting</h2>
+                        </div>
+                        <!-- Section Title End -->
+
+                        <!-- Employee Body Start -->
+                        <div class="employee-body wow fadeInUp" data-wow-delay="0.25s">
+                            <p>Our founders identified a need for an accounting service that blends advanced technology
+                                with a personal touch while ensuring top-notch security and ethical standards. They
+                                built Watersmith on trust, prioritizing rigorous data protection and ethical practices.
+                                Today, Watersmith is recognized for its reliability and excellence in the accounting
+                                industry.</p>
+
+                        </div>
+                        <!-- Employee Body End -->
+                    </div>
+                    <!-- Employee Content End -->
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="employee-content">
+                                <!-- Section Title Start -->
+                                <div class="section-title">
+                                    <h3 class="text-anime-style-3">Our vision</h3>
+                                </div>
+                                <!-- Section Title End -->
+
+                                <!-- Employee Body Start -->
+                                <div class="employee-body wow fadeInUp" data-wow-delay="0.25s">
+                                    <p>Our vision is to become the leading provider of tax and accounting services for
+                                        small to medium-sized businesses and individuals across Canada. We aim to be the
+                                        trusted partner for all tax, accounting, and administrative needs, delivering
+                                        exceptional support and standing by our clients through every challenge.</p>
+
+                                </div>
+                                <!-- Employee Body End -->
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="employee-content">
+                                <!-- Section Title Start -->
+                                <div class="section-title">
+                                    <h3 class="text-anime-style-3">Our Mission</h3>
+                                </div>
+                                <!-- Section Title End -->
+
+                                <!-- Employee Body Start -->
+                                <div class="employee-body wow fadeInUp" data-wow-delay="0.25s">
+                                    <p>Our mission is to lead in outsourcing services across Canada with innovative
+                                        solutions. We celebrate our clients' successes as our own, helping them achieve
+                                        their goals we provide exceptional financial support tailored to each client’s
+                                        needs</p>
+
+                                </div>
+                                <!-- Employee Body End -->
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Our Employee Section End -->
+
+    <!-- Why Choose Us Section Start -->
+    <div class="why-choose-us light-bg-section" style="background: url(./images/about-cta.png);">
+        <div class="container">
+            <div class="row section-row align-items-center">
+                <div class="col-lg-12 text-center">
+                    <div class="google-rating wow fadeInUp">
+                        <ul style="background-color: rgba(255, 255, 255, 0.15);">
+                            <li style="color: #fff;">Our Services</li>
+                        </ul>
+                    </div>
+                    <!-- Section Title Start -->
+                    <div class=" section-title">
+                        <!-- <h3 class="wow fadeInUp">why choose us</h3> -->
+                        <h2 class="text-anime-style-3" style="color: #fff;">We offer the best services</h2>
+                    </div>
+                    <!-- Section Title End -->
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-4">
+                    <!-- Why Choose Item Start -->
+                    <div class="why-choose-item wow fadeInUp text-center" data-wow-delay="0.25s">
+                        <div class="icon-box justify-content-center">
+                            <img src="images/tax.png" alt="">
+                        </div>
+                        <div class="why-choose-body">
+                            <h3>Tax Filing</h3>
+                            <p>Trust us to guide you through tax filing with precision and confidence, ensuring maximum
+                                benefits every step of the way</p>
+
+                            <div class="about-button" style="margin-top: 20px;">
+                                <a href="#" class="btn-default">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Why Choose Item End -->
+                </div>
+
+                <div class="col-lg-4">
+                    <!-- Why Choose Item Start -->
+                    <div class="why-choose-item wow fadeInUp text-center" data-wow-delay="0.5s">
+                        <div class="icon-box">
+                            <img src="images/accountinng.png" alt="">
+                        </div>
+                        <div class="why-choose-body">
+                            <h3>Accounting</h3>
+                            <p>In our company we deliver trusted, expert accounting solutions that empower and increase
+                                your financial success</p>
+
+                            <div class="about-button" style="margin-top: 20px;">
+                                <a href="#" class="btn-default">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Why Choose Item End -->
+                </div>
+
+                <div class="col-lg-4">
+                    <!-- Why Choose Item Start -->
+                    <div class="why-choose-item wow fadeInUp text-center" data-wow-delay="0.75s">
+                        <div class="icon-box">
+                            <img src="images/consulting.png" alt="">
+                        </div>
+                        <div class="why-choose-body">
+                            <h3>Consulting</h3>
+                            <p>We offer tailored financial consultancy to help your business thrive with
+                                expert and ethical support every step of the way.</p>
+
+                            <div class="about-button" style="margin-top: 20px;">
+                                <a href="#" class="btn-default">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Why Choose Item End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Why Choose Us Section End -->
+
+    <!-- Our Employee Section Start -->
+    <div class="our-employee" style="background-color: #fff;">
+        <div class="container">
+            <div class="row">
+                <!-- Changed align-items-center to align-items-start -->
+
+
+
+                <div class="col-lg-3 d-flex align-items-center justify-content-start">
+                    <!-- Added text-end for right alignment of the image -->
+                    <div class="employee-image">
+                        <img src="images/file-15.png" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-9 text-start">
+                    <!-- Added text-start for left alignment of text -->
+                    <!-- Employee Content Start -->
+                    <div class="employee-content">
+                        <div class="employee-image" style="width: 30px; height: 30px;">
+                            <img src="images/quote.png" alt="">
+                        </div>
+                        <!-- Section Title Start -->
+                        <!-- <div class="section-title">
+                            <h2 class="text-anime-style-3">Remote Tax Filing</h2>
+                        </div> -->
+                        <!-- Section Title End -->
+
+                        <!-- Employee Body Start -->
+                        <div class="employee-body wow fadeInUp" data-wow-delay="0.25s" style="margin-top: 10px;">
+                            <h4>We make tax filing simple and stress-free! Through the use of cloud-based technology, we
+                                offer scalable solutions through add-ons and applications, custom-tailored to meet your
+                                specific needs. 
+                            </h4>
+                            <h5 style="margin-top: 10px;">
+                                Emily Rogers
+                            </h5>
+                            <p>CEO at GreenLeaf Marketing</p>
+                        </div>
+                        <!-- Employee Body End -->
+                    </div>
+                    <!-- Employee Content End -->
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Our Employee Section End -->
+
+    <!-- Cta Box Section Start -->
+    <div class="cta-box">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 cta-left">
+                    <!-- Section Title Start -->
+                    <div class="section-title">
+                        <h2 class="text-anime-style-3">Looking for a great accounting for your business?</h2>
+
+                    </div>
+                    <p>
+                        You make things simple and stress-free! Through the use of cloud-based technology, we offer
+                        scalable solutions through add-ons and applications, custom-tailored to meet your specific
+                        needs.
+                    </p>
+                    <div class="section-btn wow fadeInUp" data-wow-delay="0.25s">
+                        <a href="#" class="btn-default btn-highlighted">get started now</a>
+                    </div>
+                    <!-- Section Title End -->
+                </div>
+
+                <div class="col-lg-6">
+
+                    <div class="employee-image">
+                        <img src="images/employee-img.png" alt="">
+                    </div>
+                    <!-- Section Btn Start -->
+                    <!-- <div class="section-btn wow fadeInUp" data-wow-delay="0.25s">
+                        <a href="#" class="btn-default btn-highlighted btn-large">get started</a>
+                    </div> -->
+                    <!-- Section Btn End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cta Box Section End -->
+
+    <!-- Footer Start -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- Footer Body Start -->
+                    <div class="footer-body">
+                        <div class="row">
+                            <div class="col-lg-5">
+
+                                <div class="footer-logo">
+                                    <img src="images/logo.png" alt="">
+                                </div>
+                                <p style="padding-top: 10px;">
+                                    Your trusted company for expert accounting
+                                    services. Explore and contact us today!
+                                </p>
+                            </div>
+
+                            <div class="col-lg-7 ">
+                                <div class="row">
+                                    <div class="col-md-4 col-6">
+                                        <!-- Footer Links Start -->
+                                        <div class="footer-links">
+                                            <h2>Services</h2>
+                                            <ul>
+                                                <li><a href="#">Assurance</a></li>
+                                                <li><a href="#">Consulting</a></li>
+                                                <li><a href="#">Tax & Legal</a></li>
+                                                <!-- <li><a href="#">Contact Us</a></li> -->
+                                            </ul>
+                                        </div>
+                                        <!-- Footer Links End -->
+                                    </div>
+
+                                    <div class="col-md-4 col-6">
+                                        <!-- Footer Links Start -->
+                                        <div class="footer-links">
+                                            <h2>Insights</h2>
+                                            <ul>
+                                                <li><a href="#">Global Insights</a></li>
+                                                <li><a href="#">Latest Insights</a></li>
+                                                <li><a href="#">Reports</a></li>
+                                                <!-- <li><a href="#">linkedin</a></li> -->
+                                            </ul>
+                                        </div>
+                                        <!-- Footer Links End -->
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <!-- Footer Contact Start -->
+                                        <div class="footer-contact">
+                                            <h2>Company</h2>
+                                            <ul>
+                                                <li><a href="#">Legal</a></li>
+                                                <li><a href="#">Terms of use</a></li>
+                                                <li><a href="#">Privacy Policy</a></li>
+                                            </ul>
+                                        </div>
+                                        <!-- Footer Contact End -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Footer Body End -->
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Select all the image wrappers
+            const imgWrappers = document.querySelectorAll('.contentLeft .row .imgWrapper');
+
+            // Define options for IntersectionObserver
+            const observerOptions = {
+                root: null, // Use the viewport as the root
+                rootMargin: '0px',
+                threshold: 0.1 // Trigger when at least 10% of the element is visible
+            };
+
+            // Create the observer
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Add the 'animate' class to trigger the animation
+                        entry.target.classList.add('animate');
+                        // Optional: Unobserve the element after it has been animated
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observe each imgWrapper
+            imgWrappers.forEach(wrapper => {
+                observer.observe(wrapper);
+            });
+        });
+    </script>
+
+    <!-- Jquery Library File -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap js file -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Validator js file -->
+    <script src="js/validator.min.js"></script>
+    <!-- SlickNav js file -->
+    <script src="js/jquery.slicknav.js"></script>
+    <!-- Swiper js file -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <!-- Counter js file -->
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <!-- Magnific js file -->
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <!-- SmoothScroll -->
+    <script src="js/SmoothScroll.js"></script>
+    <!-- MagicCursor js file -->
+    <script src="js/gsap.min.js"></script>
+    <script src="js/magiccursor.js"></script>
+    <!-- Text Effect js file -->
+    <script src="js/SplitText.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <!-- Wow js file -->
+    <script src="js/wow.js"></script>
+    <!-- Main Custom js file -->
+    <script src="js/function.js"></script>
+</body>
+
+</html>
