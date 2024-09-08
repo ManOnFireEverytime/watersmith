@@ -171,6 +171,95 @@
             .employee-content .section-title h2 {
                 font-size: 25px !important;
             }
+
+            .state-image-counter-1 {
+                margin-bottom: -100px;
+            }
+
+            .state-image-counter-2,
+            .state-image-counter-1 {
+                display: flex !important;
+            }
+
+            .state-image-counter-2 .counter-box,
+            .state-image-counter-1 .counter-box {
+                width: 50%;
+                height: 50%;
+                padding: 40px 10px;
+                margin-left: 0px;
+
+            }
+
+            .state-image-counter-2 .counter-box:first-child,
+            .state-image-counter-1 .counter-box:first-child {
+                margin: 0 auto !important;
+            }
+
+
+            .state-image-counter-2 .counter-box:last-child,
+            .state-image-counter-1 .counter-box:last-child {
+                margin-bottom: 0;
+            }
+
+            .state-image-counter-2 .counter-image,
+            .state-image-counter-1 .counter-image {
+                display: block;
+                background-color: transparent;
+                padding: 0;
+                width: 100%;
+            }
+
+            .why-choose-image img {
+                aspect-ratio: 1 / 1;
+            }
+
+            .why-choose-content {
+                position: absolute;
+                width: calc(100% - 20px);
+                /* Adjust width to account for padding */
+                top: 0;
+                left: 10px;
+                /* Add side padding */
+                right: 10px;
+                /* Add side padding */
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                /* Push title to the top and counter to the bottom */
+                padding-left: 10px;
+                /* Add side padding */
+                padding-right: 10px;
+                /* Add side padding */
+            }
+
+            .why-choose-title {
+                margin-top: 20px;
+                /* Add spacing at the top */
+                margin-bottom: 10px;
+                /* Adjust margin bottom for spacing */
+            }
+
+            .why-choose-title h2 {
+                font-size: 26px;
+            }
+
+            .why-choose-counter h3 {
+                font-size: 30px;
+            }
+
+            .why-choose-counter {
+                width: 100%;
+                text-align: left;
+            }
+
+            .why-choose-item {
+                padding: 10px;
+            }
+
+            .why-choose-body h3 {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
@@ -415,7 +504,7 @@
                         <img src="images/file-13.png" alt="">
                     </div>
                 </div>
-                <div class="col-lg-6 text-start">
+                <div class="col-lg-6 order-2 order-lg-1 text-start">
                     <!-- Employee Content Start -->
                     <div class="employee-content">
                         <!-- Section Title Start -->
@@ -485,7 +574,7 @@
     <div class="our-employee">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 text-start">
+                <div class="col-lg-6 order-2 order-lg-1 text-start">
                     <!-- Employee Content Start -->
                     <div class="employee-content">
                         <!-- Section Title Start -->
@@ -532,7 +621,7 @@
                     <!-- Employee Content End -->
                 </div>
 
-                <div class="col-lg-6 d-flex align-items-center justify-content-end">
+                <div class="col-lg-6 order-1 order-lg-2 d-flex align-items-center justify-content-end">
                     <!-- Center the image vertically and align to the right -->
                     <div class="employee-image">
                         <img src="images/file-12.png" alt="">

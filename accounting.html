@@ -156,6 +156,95 @@
             .employee-content .section-title h2 {
                 font-size: 25px !important;
             }
+
+            .state-image-counter-1 {
+                margin-bottom: -100px;
+            }
+
+            .state-image-counter-2,
+            .state-image-counter-1 {
+                display: flex !important;
+            }
+
+            .state-image-counter-2 .counter-box,
+            .state-image-counter-1 .counter-box {
+                width: 50%;
+                height: 50%;
+                padding: 40px 10px;
+                margin-left: 0px;
+
+            }
+
+            .state-image-counter-2 .counter-box:first-child,
+            .state-image-counter-1 .counter-box:first-child {
+                margin: 0 auto !important;
+            }
+
+
+            .state-image-counter-2 .counter-box:last-child,
+            .state-image-counter-1 .counter-box:last-child {
+                margin-bottom: 0;
+            }
+
+            .state-image-counter-2 .counter-image,
+            .state-image-counter-1 .counter-image {
+                display: block;
+                background-color: transparent;
+                padding: 0;
+                width: 100%;
+            }
+
+            .why-choose-image img {
+                aspect-ratio: 1 / 1;
+            }
+
+            .why-choose-content {
+                position: absolute;
+                width: calc(100% - 20px);
+                /* Adjust width to account for padding */
+                top: 0;
+                left: 10px;
+                /* Add side padding */
+                right: 10px;
+                /* Add side padding */
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                /* Push title to the top and counter to the bottom */
+                padding-left: 10px;
+                /* Add side padding */
+                padding-right: 10px;
+                /* Add side padding */
+            }
+
+            .why-choose-title {
+                margin-top: 20px;
+                /* Add spacing at the top */
+                margin-bottom: 10px;
+                /* Adjust margin bottom for spacing */
+            }
+
+            .why-choose-title h2 {
+                font-size: 26px;
+            }
+
+            .why-choose-counter h3 {
+                font-size: 30px;
+            }
+
+            .why-choose-counter {
+                width: 100%;
+                text-align: left;
+            }
+
+            .why-choose-item {
+                padding: 10px;
+            }
+
+            .why-choose-body h3 {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
@@ -390,7 +479,7 @@
             <div class="row">
                 <!-- Changed align-items-center to align-items-start -->
 
-                <div class="col-lg-7 text-start">
+                <div class="col-lg-7 order-2 order-lg-1 text-start">
                     <!-- Added text-start for left alignment of text -->
                     <!-- Employee Content Start -->
                     <div class="employee-content">
@@ -421,7 +510,7 @@
                     <!-- Employee Content End -->
                 </div>
 
-                <div class="col-lg-5 d-flex align-items-center justify-content-end">
+                <div class="col-lg-5 order-1 order-lg-2 d-flex align-items-center justify-content-end">
                     <!-- Added text-end for right alignment of the image -->
                     <div class="employee-image">
                         <img src="images/file-14.png" alt="Accounting Image">
@@ -444,7 +533,7 @@
                         <img src="images/file-7.png" alt="Accounting Image">
                     </div>
                 </div>
-                <div class="col-lg-6 text-start">
+                <div class="col-lg-6 order-2 order-lg-1 text-start">
                     <!-- Added text-start for left alignment of text -->
                     <!-- Employee Content Start -->
                     <div class="employee-content">
@@ -498,7 +587,7 @@
             <div class="row">
                 <!-- Changed align-items-center to align-items-start -->
 
-                <div class="col-lg-6 text-start">
+                <div class="col-lg-6 order-2 order-lg-1 text-start">
                     <!-- Added text-start for left alignment of text -->
                     <!-- Employee Content Start -->
                     <div class="employee-content">
@@ -529,7 +618,7 @@
                     <!-- Employee Content End -->
                 </div>
 
-                <div class="col-lg-6 d-flex align-items-center justify-content-end">
+                <div class="col-lg-6 order-1 order-lg-2 d-flex align-items-center justify-content-end">
                     <!-- Added text-end for right alignment of the image -->
                     <div class="employee-image">
                         <img src="images/file-5.png" alt="Accounting Image">
@@ -602,7 +691,7 @@
             <div class="row align-items-start">
                 <!-- Changed align-items-center to align-items-start -->
 
-                <div class="col-lg-7 text-start">
+                <div class="col-lg-7 order-2 order-lg-1 text-start">
                     <!-- Added text-start for left alignment of text -->
                     <!-- Employee Content Start -->
                     <div class="employee-content">
@@ -634,7 +723,7 @@
                     <!-- Employee Content End -->
                 </div>
 
-                <div class="col-lg-5 text-end">
+                <div class="col-lg-5 order-1 order-lg-2 d-flex align-items-center justify-content-end">
                     <!-- Added text-end for right alignment of the image -->
                     <div class="employee-image">
                         <img src="images/file-8.png" alt="Accounting Image">

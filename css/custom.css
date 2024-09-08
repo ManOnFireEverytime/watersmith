@@ -2868,10 +2868,14 @@ header.main-header {
 }
 
 .pricing-box {
-  background-color: var(--secondary-color);
+  background-color: var(--white-color);
+  border-top: 20px solid rgba(0, 91, 80, 0.5);
   border-radius: 40px;
   height: calc(100% - 30px);
   margin-bottom: 30px;
+  /* margin-left: 40px;
+  margin-right: 40px;
+  margin-top: 40px; */
   padding: 40px;
 }
 
@@ -2943,7 +2947,7 @@ header.main-header {
   position: relative;
   font-weight: 600;
   color: var(--primary-color);
-  padding-left: 30px;
+  /* padding-left: 30px; */
   margin-bottom: 10px;
   text-transform: capitalize;
 }
@@ -2956,7 +2960,7 @@ header.main-header {
   margin-bottom: 0;
 }
 
-.pricing-box-body ul li:before {
+/* .pricing-box-body ul li:before {
   content: "\f058";
   font-family: "Font Awesome 6 Free";
   background-color: transparent;
@@ -2970,7 +2974,7 @@ header.main-header {
 
 .pricing-box.highlighted-box .pricing-box-body ul li:before {
   color: var(--white-color);
-}
+} */
 
 .pricing-box-footer .btn-default.btn-highlighted {
   margin: 0;

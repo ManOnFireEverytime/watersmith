@@ -59,6 +59,11 @@
             /* Adjust as needed for the desired size of img-top */
         }
 
+        .tax-list li {
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
         .white-box {
             position: absolute;
             bottom: 25px;
@@ -159,12 +164,12 @@
         @media only screen and (max-width: 768px) {
 
             .contentLeft .row {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(3, 1fr);
             }
 
             .contentLeft .row .imgWrapper {
-                height: 150px;
-                border-radius: 10px;
+                height: 400px;
+                border-radius: 100px;
             }
 
             .employee-content {
@@ -337,7 +342,7 @@
             <div class="row align-items-start">
                 <!-- Changed align-items-center to align-items-start -->
 
-                <div class="col-lg-6 text-end">
+                <div class="col-lg-6 text-start">
                     <!-- Added text-end for right alignment of the image -->
                     <div class="contentLeft">
                         <div class="row">
@@ -358,7 +363,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-6 text-start">
+                <div class="col-lg-6 order-2 order-lg-1 text-start">
                     <!-- Added text-start for left alignment of text -->
                     <!-- Employee Content Start -->
                     <div class="employee-content">
@@ -391,11 +396,6 @@
                         </div>
                         <!-- Employee Body End -->
 
-                        <!-- Employee Footer Start -->
-                        <div class="" style="margin-bottom: 10px;">
-                            <a href="#" class="btn-default">Get Started</a>
-                        </div>
-                        <!-- Employee Footer End -->
                     </div>
                     <!-- Employee Content End -->
                 </div>
@@ -419,7 +419,12 @@
                         different classes of individuals and corporations. We offer these services alongside tax filing
                         at the best rates for.</p>
                     <div class="" style="margin-bottom: 10px;">
-                        <a href="#" class="btn-default">View Rates</a>
+                        <button type="button" class="btn btn-default" data-bs-toggle="modal"
+                            data-bs-target="#pricingModal">
+                            View Rates
+                        </button>
+                        <!-- <a href="javascript:void(0)" class="btn-default" data-toggle="modal"
+                            data-target="#pricingModal">View Rates</a> -->
                     </div>
                 </div>
 
@@ -428,7 +433,7 @@
             <div class="row">
                 <!-- Changed align-items-center to align-items-start -->
 
-                <div class="col-lg-6 text-start">
+                <div class="col-lg-6 order-2 order-lg-1 text-start">
                     <!-- Added text-start for left alignment of text -->
                     <!-- Employee Content Start -->
                     <div class="employee-content">
@@ -447,17 +452,31 @@
                             </p>
                             <ul class="tax-list" style="list-style-type: none; padding-left: 0;">
                                 <!-- Removed default padding to align left -->
-                                <li><img src="images/tick.png" alt="Check Icon" class="check-icon">Income Slips</li>
-                                <li><img src="images/tick.png" alt="Check Icon" class="check-icon">Tuition Receipts</li>
-                                <li><img src="images/tick.png" alt="Check Icon" class="check-icon">Rent Information</li>
-                                <li><img src="images/tick.png" alt="Check Icon" class="check-icon">Donations</li>
-                                <li><img src="images/tick.png" alt="Check Icon" class="check-icon"> Metro passes
+                                <li
+                                    style="background-color: rgba(0, 91, 80, 0.2); border-radius: 10px; display: flex; align-items: center; padding: 10px;">
+                                    <img src="images/tick.png" alt="Check Icon" class="check-icon">Income Slips</li>
+                                <li
+                                    style="background-color: rgba(39, 180, 43, 0.2); border-radius: 10px; display: flex; align-items: center; padding: 10px;">
+                                    <img src="images/tick.png" alt="Check Icon" class="check-icon">Tuition Receipts</li>
+                                <li
+                                    style="background-color: rgba(0, 91, 80, 0.2); border-radius: 10px; display: flex; align-items: center; padding: 10px;">
+                                    <img src="images/tick.png" alt="Check Icon" class="check-icon">Rent Information</li>
+                                <li style="background-color: rgba(39, 180, 43, 0.2); border-radius: 10px; display: flex;
+                                    align-items: center; padding: 10px;">
+                                    <img src="images/tick.png" alt="Check Icon" class="check-icon">Donations</li>
+                                <li
+                                    style="background-color: rgba(0, 91, 80, 0.2); border-radius: 10px; display: flex; align-items: center; padding: 10px;">
+                                    <img src="images/tick.png" alt="Check Icon" class="check-icon"> Metro passes
                                     (weekly, monthly,
                                     or presto card)</li>
-                                <li><img src="images/tick.png" alt="Check Icon" class="check-icon">Changed jobs during
+                                <li style="background-color: rgba(39, 180, 43, 0.2); border-radius: 10px; display: flex;
+                                    align-items: center; padding: 10px;">
+                                    <img src="images/tick.png" alt="Check Icon" class="check-icon">Changed jobs during
                                     the year
                                 </li>
-                                <li><img src="images/tick.png" alt="Check Icon" class="check-icon">Retired during the
+                                <li
+                                    style="background-color: rgba(0, 91, 80, 0.2); border-radius: 10px; display: flex; align-items: center; padding: 10px;">
+                                    <img src="images/tick.png" alt="Check Icon" class="check-icon">Retired during the
                                     year</li>
 
                             </ul>
@@ -472,10 +491,10 @@
                     </div>
                     <!-- Employee Content End -->
                 </div>
-                <div class="col-lg-6 d-flex align-items-center justify-content-end">
+                <div class="col-lg-6 order-1 order-lg-2 d-flex align-items-center justify-content-end">
                     <!-- Added text-end for right alignment of the image -->
                     <div class="employee-image">
-                        <img src="images/file-4.png" alt="Tax Image">
+                        <img src="images/file-16.png" alt="Tax Image">
                     </div>
                 </div>
 
@@ -484,19 +503,213 @@
         </div>
     </div>
     <!-- Our Employee Section End -->
+    <div class="modal fade" id="pricingModal" tabindex="-1" aria-labelledby="pricingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #EFFFFD;">
+                    <h5 class="modal-title" id="pricingModalLabel">Rates</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="background-color: #EFFFFD;">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <!-- Pricing Box Start -->
+                            <div class="pricing-box">
+                                <!-- Pricing Box Header Start -->
+                                <div class="pricing-box-header">
 
+                                    <div class="pricing-box-content text-center">
+                                        <h3>student</h3>
+                                        <!-- <p>At vero eos et accusamus et iusto odio qui blanditiis praesentium voluptatum
+                                            deleniti atque corrupti quos dolores.</p> -->
+                                    </div>
+                                    <div class="pricing-box-title text-center">
+                                        <h2 style="color: #005b50;">$50</h2>
+                                    </div>
+                                    <div class="pricing-box-content">
+                                        <!-- <h3>starter package</h3> -->
+                                        <p>Student rate includes:</p>
+                                    </div>
+                                </div>
+
+                                <!-- Pricing Box Header End -->
+
+                                <!-- Pricing Box Body Start -->
+                                <div class="pricing-box-body">
+                                    <ul>
+                                        <li><img src="images/tick.png" alt="Check Icon" class="check-icon">E-filing</li>
+                                        <li><img src="images/tick.png" alt="Check Icon" class="check-icon">Remote filing
+                                            only</li>
+                                        <li><img src="images/tick.png" alt="Check Icon" class="check-icon">Previous
+                                            years filing</li>
+                                        <li><img src="images/tick.png" alt="Check Icon" class="check-icon">Client copy
+                                        </li>
+                                        <li><img src="images/tick.png" alt="Check Icon" class="check-icon">Year round
+                                            supports</li>
+                                    </ul>
+                                </div>
+                                <!-- Pricing Box Body End -->
+                            </div>
+                            <!-- Pricing Box End -->
+                        </div>
+                        <div class="col-lg-6">
+                            <!-- Pricing Box Start -->
+                            <div class="pricing-box">
+                                <!-- Pricing Box Header Start -->
+                                <div class="pricing-box-header">
+
+                                    <div class="pricing-box-content text-center">
+                                        <h3>employed</h3>
+                                        <!-- <p>At vero eos et accusamus et iusto odio qui blanditiis praesentium voluptatum
+                                            deleniti atque corrupti quos dolores.</p> -->
+                                    </div>
+                                    <div class="pricing-box-title text-center">
+                                        <h2 style="color: #005b50;">$85</h2>
+                                    </div>
+                                    <div class="pricing-box-content">
+                                        <!-- <h3>starter package</h3> -->
+                                        <p>Employed rate includes:</p>
+                                    </div>
+                                </div>
+
+                                <!-- Pricing Box Header End -->
+
+                                <!-- Pricing Box Body Start -->
+                                <div class="pricing-box-body">
+                                    <ul>
+                                        <li><img src="images/tick.png" alt="Check Icon" class="check-icon">E-filing</li>
+                                        <li><img src="images/tick.png" alt="Check Icon" class="check-icon">Remote filing
+                                            only</li>
+                                        <li><img src="images/tick.png" alt="Check Icon" class="check-icon">Previous
+                                            years filing</li>
+                                        <li><img src="images/tick.png" alt="Check Icon" class="check-icon">Client copy
+                                        </li>
+                                        <li><img src="images/tick.png" alt="Check Icon" class="check-icon">Various
+                                            Income types</li>
+                                        <li><img src="images/tick.png" alt="Check Icon"
+                                                class="check-icon">Representation with the CRA</li>
+
+                                    </ul>
+                                </div>
+                                <!-- Pricing Box Body End -->
+                            </div>
+                            <!-- Pricing Box End -->
+                        </div>
+
+                        <div class="col-lg-6">
+                            <!-- Pricing Box Start -->
+                            <div class="pricing-box">
+                                <!-- Pricing Box Header Start -->
+                                <div class="pricing-box-header">
+
+                                    <div class="pricing-box-content text-center">
+                                        <h3>self-employed</h3>
+                                        <!-- <p>At vero eos et accusamus et iusto odio qui blanditiis praesentium voluptatum
+                                            deleniti atque corrupti quos dolores.</p> -->
+                                    </div>
+                                    <div class="pricing-box-title text-center">
+                                        <h2 style="color: #005b50;">$180</h2>
+                                    </div>
+                                    <div class="pricing-box-content">
+                                        <!-- <h3>starter package</h3> -->
+                                        <p>Self-employed rate includes:</p>
+                                    </div>
+                                </div>
+
+                                <!-- Pricing Box Header End -->
+
+                                <!-- Pricing Box Body Start -->
+                                <div class="pricing-box-body">
+                                    <ul>
+                                        <li><img src="images/tick.png" alt="Check Icon" class="check-icon">E-filing
+                                        </li>
+                                        <li><img src="images/tick.png" alt="Check Icon" class="check-icon">Remote
+                                            filing
+                                            only</li>
+                                        <li><img src="images/tick.png" alt="Check Icon" class="check-icon">Previous
+                                            years filing</li>
+                                        <li><img src="images/tick.png" alt="Check Icon" class="check-icon">Client copy
+                                        </li>
+                                        <li><img src="images/tick.png" alt="Check Icon" class="check-icon">Various
+                                            Income types</li>
+                                        <li><img src="images/tick.png" alt="Check Icon"
+                                                class="check-icon">Representation with the CRA</li>
+
+                                    </ul>
+                                </div>
+                                <!-- Pricing Box Body End -->
+                            </div>
+                            <!-- Pricing Box End -->
+                        </div>
+
+                        <div class="col-lg-6">
+                            <!-- Pricing Box Start -->
+                            <div class="pricing-box">
+                                <!-- Pricing Box Header Start -->
+                                <div class="pricing-box-header">
+
+                                    <div class="pricing-box-content text-center">
+                                        <h3>corporate</h3>
+                                        <!-- <p>At vero eos et accusamus et iusto odio qui blanditiis praesentium voluptatum
+                                            deleniti atque corrupti quos dolores.</p> -->
+                                    </div>
+                                    <div class="pricing-box-title text-center">
+                                        <h2 style="color: #005b50;">$685</h2>
+                                    </div>
+                                    <div class="pricing-box-content">
+                                        <!-- <h3>starter package</h3> -->
+                                        <p>Corporate rate includes:</p>
+                                    </div>
+                                </div>
+
+                                <!-- Pricing Box Header End -->
+
+                                <!-- Pricing Box Body Start -->
+                                <div class="pricing-box-body">
+                                    <ul>
+                                        <li><img src="images/tick.png" alt="Check Icon" class="check-icon">E-filing
+                                        </li>
+                                        <li><img src="images/tick.png" alt="Check Icon" class="check-icon">Remote
+                                            filing
+                                            only</li>
+                                        <li><img src="images/tick.png" alt="Check Icon" class="check-icon">Previous
+                                            years filing</li>
+                                        <li><img src="images/tick.png" alt="Check Icon" class="check-icon">Client copy
+                                        </li>
+                                        <li><img src="images/tick.png" alt="Check Icon" class="check-icon">Various
+                                            Income types</li>
+                                        <li><img src="images/tick.png" alt="Check Icon"
+                                                class="check-icon">Representation with the CRA</li>
+                                        <li><img src="images/tick.png" alt="Check Icon" class="check-icon">Real-time
+                                            filing</li>
+
+                                    </ul>
+                                </div>
+                                <!-- Pricing Box Body End -->
+                            </div>
+                            <!-- Pricing Box End -->
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer" style="background-color: #EFFFFD;">
+                    <button type="button" class="btn btn-default" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
     <!-- Our Employee Section Start -->
     <div class="our-employee">
         <div class="container">
             <div class="row align-items-start">
                 <!-- Changed align-items-center to align-items-start -->
-                <div class="col-lg-6 text-start">
+                <div class="col-lg-6 order-2 order-lg-1 text-start">
                     <!-- Added text-end for right alignment of the image -->
                     <div class="employee-image">
                         <img src="images/file-9.png" alt="Tax Image">
                     </div>
                 </div>
-                <div class="col-lg-6 text-start">
+                <div class="col-lg-6 order-2 order-lg-1 text-start">
                     <!-- Added text-start for left alignment of text -->
                     <!-- Employee Content Start -->
                     <div class="employee-content">
@@ -538,7 +751,7 @@
             <div class="row align-items-start">
                 <!-- Changed align-items-center to align-items-start -->
 
-                <div class="col-lg-6 text-start">
+                <div class="col-lg-6 order-2 order-lg-1 text-start">
                     <!-- Added text-start for left alignment of text -->
                     <!-- Employee Content Start -->
                     <div class="employee-content">
@@ -568,7 +781,7 @@
                     <!-- Employee Content End -->
                 </div>
 
-                <div class="col-lg-6 text-end">
+                <div class="col-lg-6 order-1 order-lg-2 d-flex align-items-center justify-content-end">
                     <!-- Added text-end for right alignment of the image -->
                     <div class="employee-image">
                         <img src="images/file-10.png" alt="Tax Image">
@@ -585,13 +798,13 @@
         <div class="container">
             <div class="row align-items-start">
                 <!-- Changed align-items-center to align-items-start -->
-                <div class="col-lg-6 text-start">
+                <div class="col-lg-6 order-2 order-lg-1 text-start">
                     <!-- Added text-end for right alignment of the image -->
                     <div class="employee-image">
                         <img src="images/file-11.png" alt="Tax Image">
                     </div>
                 </div>
-                <div class="col-lg-6 text-start">
+                <div class="col-lg-6 order-2 order-lg-1 text-start">
                     <!-- Added text-start for left alignment of text -->
                     <!-- Employee Content Start -->
                     <div class="employee-content">
@@ -733,6 +946,7 @@
     </script>
 
     <!-- Jquery Library File -->
+
     <script src="js/jquery-3.7.1.min.js"></script>
     <!-- Bootstrap js file -->
     <script src="js/bootstrap.min.js"></script>
