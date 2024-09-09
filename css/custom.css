@@ -1540,7 +1540,7 @@ header.main-header {
 }
 
 .post-featured-image {
-  border-radius: 40px;
+  border-radius: 10px;
   overflow: hidden;
   margin-bottom: 20px;
 }
@@ -1548,7 +1548,7 @@ header.main-header {
 .post-featured-image img {
   aspect-ratio: 1/0.65;
   object-fit: cover;
-  border-radius: 40px;
+  border-radius: 10px;
   transition: all 0.5s ease-out;
 }
 
@@ -1562,9 +1562,9 @@ header.main-header {
 
 .post-item-body h2 {
   display: block;
-  font-size: 22px;
+  font-size: 28px;
   line-height: 1.4em;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 .post-item-body h2 a {
@@ -3446,8 +3446,12 @@ header.main-header {
     padding: 50px 0 20px;
   }
   .post-item-body h2 {
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 24px;
+    /* margin-bottom: 10px; */
+  }
+  .post-item-body p {
+    font-size: 16px;
+    /* margin-bottom: 10px; */
   }
   .main-footer {
     width: 100%;
@@ -3903,7 +3907,11 @@ header.main-header {
     font-size: 20px;
   }
   .post-item-body h2 {
-    font-size: 18px;
+    font-size: 14px;
+  }
+
+  .post-item-body p {
+    font-size: 10px;
   }
   .footer-logo img {
     max-width: 147px;
