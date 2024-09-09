@@ -59,6 +59,19 @@
             /* Adjust as needed for the desired size of img-top */
         }
 
+        @media (max-width: 768px) {
+            .why-choose-us {
+                background-size: contain;
+                /* Shows the entire image on mobile */
+                background-position: top center;
+                /* Adjusts positioning for smaller screens */
+                height: auto;
+                /* Removes fixed height */
+                min-height: 100vh;
+                /* Ensures the content fills the viewport */
+            }
+        }
+
         .white-box {
             position: absolute;
             bottom: 25px;
