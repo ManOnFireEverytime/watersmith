@@ -191,40 +191,40 @@
       }
     });
 
-  function submitForm() {
-    /* Initiate Variables With Form Content*/
-    var fname = $("#fname").val();
-    var lname = $("#lname").val();
-    var email = $("#email").val();
-    var phone = $("#phone").val();
-    var subject = $("#subject").val();
-    var message = $("#msg").val();
+  // function submitForm() {
+  //   /* Initiate Variables With Form Content*/
+  //   var fname = $("#fname").val();
+  //   var lname = $("#lname").val();
+  //   var email = $("#email").val();
+  //   var phone = $("#phone").val();
+  //   var subject = $("#subject").val();
+  //   var message = $("#msg").val();
 
-    $.ajax({
-      type: "POST",
-      url: "form-process.php",
-      data:
-        "fname=" +
-        fname +
-        "&lname=" +
-        lname +
-        "&email=" +
-        email +
-        "&phone=" +
-        phone +
-        "&subject=" +
-        subject +
-        "&message=" +
-        message,
-      success: function (text) {
-        if (text == "success") {
-          formSuccess();
-        } else {
-          submitMSG(false, text);
-        }
-      },
-    });
-  }
+  //   $.ajax({
+  //     type: "POST",
+  //     url: "form-process.php",
+  //     data:
+  //       "fname=" +
+  //       fname +
+  //       "&lname=" +
+  //       lname +
+  //       "&email=" +
+  //       email +
+  //       "&phone=" +
+  //       phone +
+  //       "&subject=" +
+  //       subject +
+  //       "&message=" +
+  //       message,
+  //     success: function (text) {
+  //       if (text == "success") {
+  //         formSuccess();
+  //       } else {
+  //         submitMSG(false, text);
+  //       }
+  //     },
+  //   });
+  // }
 
   function formSuccess() {
     $contactform[0].reset();

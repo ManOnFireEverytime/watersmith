@@ -13,6 +13,7 @@
     <!-- Favicon Icon -->
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
     <!-- Google Fonts Css-->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
@@ -211,7 +212,12 @@
                         </div>
 
                         <div class="hero-content-footer wow fadeInUp" data-wow-delay="0.75s">
-                            <a href="#" class="btn-default">Get Started</a>
+                            <!-- Calendly link widget begin -->
+
+
+                            <!-- Calendly link widget end -->
+                            <a onclick="Calendly.initPopupWidget({url: 'https://calendly.com/mofeogunkanmi'});return false;"
+                                class="btn-default" style="cursor: pointer;">Get Started</a>
                             <a href="#" class="btn-default btn-highlighted">Learn More</a>
                         </div>
                     </div>
@@ -652,6 +658,9 @@
         </div>
     </footer>
     <!-- Footer End -->
+
+
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
     <!-- Jquery Library File -->
     <script src="js/jquery-3.7.1.min.js"></script>

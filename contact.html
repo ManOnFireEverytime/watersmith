@@ -436,28 +436,29 @@
                             <div class="col-lg-12">
                                 <!-- Contact Form Start -->
                                 <div class="contact-form wow fadeInUp" data-wow-delay="0.25s">
-                                    <form id="contactForm" action="#" method="POST" data-toggle="validator">
+                                    <form action="contact.php" method="POST" enctype="multipart/form-data"
+                                        data-toggle="validator">
                                         <div class="row">
                                             <div class="form-group col-md-6 mb-4">
-                                                <input type="text" name="fname" class="form-control" id="fname"
+                                                <input type="text" name="name" class="form-control" id="name"
                                                     placeholder="Your Name" required="">
                                                 <div class="help-block with-errors"></div>
                                             </div>
 
                                             <div class="form-group col-md-6 mb-4">
-                                                <input type="text" name="lname" class="form-control" id="lname"
+                                                <input type="email" name="email" class="form-control" id="email"
                                                     placeholder="Your Email" required="">
                                                 <div class="help-block with-errors"></div>
                                             </div>
 
                                             <div class="form-group col-md-6 mb-4">
-                                                <input type="email" name="email" class="form-control" id="email"
+                                                <input type="text" name="company" class="form-control" id="company"
                                                     placeholder="Company" required="">
                                                 <div class="help-block with-errors"></div>
                                             </div>
 
                                             <div class="form-group col-md-6 mb-4">
-                                                <input type="text" name="phone" class="form-control" id="phone"
+                                                <input type="text" name="budget" class="form-control" id="budget"
                                                     placeholder="Project Budget" required="">
                                                 <div class="help-block with-errors"></div>
                                             </div>
@@ -473,7 +474,7 @@
                                             <div class="form-group col-md-12 mb-4">
                                                 <label for="file" class="custom-file-upload">
                                                     <i class="fa-solid fa-file"></i>
-                                                    <span id="file-name">Drop it like it's hot</span>
+                                                    <span id="file-name">Attach Document</span>
                                                     <input type="file" name="file" id="file" required="">
                                                 </label>
                                                 <div class="help-block with-errors"></div>
